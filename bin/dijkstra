@@ -2,4 +2,4 @@
 
 require 'dijkstra'
 
-Dijkstra.new(*ARGV).run
+Graph.new(*ARGV).traverse
