@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'dijkstra'
+
+Dijkstra.new(*ARGV).run
