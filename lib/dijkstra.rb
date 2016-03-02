@@ -1,7 +1,7 @@
 require './lib/graph_data'
+
 class Dijkstra
-  attr_reader :filename,
-              :start_point,
+  attr_reader :start_point,
               :end_point,
               :graph_data,
               :visited,
@@ -9,7 +9,6 @@ class Dijkstra
               :point_values
 
   def initialize(filename, start_point, end_point)
-    @filename = filename
     @start_point = start_point
     @end_point = end_point
     @graph_data ||= GraphData.new(filename)
@@ -44,12 +43,12 @@ class Dijkstra
   def choose_best_path(current_point)
     options = graph_data.unvisited_neighbors_for_point(current_point, unvisited)
 
-    options.each do |point_option|
-      calculated_value = point_values[current_point][:value] + point_option[:distance]
-      current_endpoint_value = point_values[point_option[:ending_point]][:value]
+    options.each do |option|
+      current_endpoint_value = point_values[option[:ending_point]][:value]
+      calculated_value = point_values[current_point][:value] + option[:distance]
 
       if calculated_value < current_endpoint_value
-        point_values[point_option[:ending_point]] = { value: calculated_value, from: current_point }
+        point_values[option[:ending_point]] = { value: calculated_value, from: current_point }
       end
     end
 
