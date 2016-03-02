@@ -1,14 +1,11 @@
 Dijkstra
 ========
 
-Installation of gem
--------------------
+Instructions
+------------
 
 1. Clone the gem
-`git clone git@github.com:wzcolon/dijkstra`
+`git clone https://github.com/wzcolon/dijkstra.git`
 
-2. Install the gem locally
-`gem install dijkstra-0.0.1.gem`
-
-3. Run it!
-
+2. Run it!
+`cd dijkstra && bin/dijkstra my_graph.txt A G`
