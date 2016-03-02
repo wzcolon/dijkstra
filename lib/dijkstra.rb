@@ -1,5 +1,5 @@
 require './lib/graph_data'
-class Djisktra
+class Dijkstra
   attr_reader :filename,
               :start_point,
               :end_point,
