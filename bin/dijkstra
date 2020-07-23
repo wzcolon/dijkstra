@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'dijkstra'
+require_relative '../lib/dijkstra'
 
 Graph.new(*ARGV).traverse
